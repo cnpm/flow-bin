@@ -14,7 +14,9 @@
   },
   "scripts": {
     "test": "npm run postinstall && xo && ava",
-    "postinstall": "node lib/install.js"
+    "postinstall": "node lib/install.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -41,11 +43,13 @@
   ],
   "dependencies": {
     "bin-wrapper": "^3.0.2",
-    "logalot": "^2.0.0"
+    "logalot": "^2.0.0",
+    "snyk": "^1.87.0"
   },
   "devDependencies": {
     "ava": "*",
     "bin-check": "^3.0.0",
     "xo": "*"
-  }
+  },
+  "snyk": true
 }
